@@ -1,4 +1,4 @@
-let tarefas = []
+let tarefas = [];
 
 function adicionarTarefa() {
     // recebe valor do input do usuário
@@ -37,10 +37,43 @@ function renderizarTarefas() {
     // 3. se vai de 1 em 1 elemento ou se pula
 
     // for(iterador, condição, frequencia)
-    let i = 0
-    for(i; i < tarefas.length; i++) {
+    
+    for(let i = 0; i < tarefas.length; i++) {
         let novaTarefa = document.createElement("li");
-        novaTarefa.textContent = tarefa[i];
+        novaTarefa.textContent = tarefas[i];
+
+        let botaoRemover = document.createElement("button")
+        botaoRemover.className = "remover"
+        botaoRemover.textContent = "Remover"
+        botaoRemover.onclick = () => removerTarefa(i)
+        
+        let botaoEditar = document.createElement("button")
+        botaoEditar.className = "editar"
+        botaoEditar.textContent = "Editar"
+        botaoEditar.onclick = () => editarTarefa(i)
+
+        novaTarefa.appendChild(botaoRemover)
+        novaTarefa.appendChild(botaoEditar)
         listaTarefas.appendChild(novaTarefa);
     }
+}
+
+function removerTarefa(i) {
+    tarefas.splice(i, 1)
+    renderizarTarefas()
+}
+
+function editarTarefa(i) {
+    let tarefaEditada = prompt("Edite a tarefa:")
+    if (tarefaEditada.trim() !== "") {
+        tarefas[i] = tarefaEditada
+        renderizarTarefas()
+    }
+}
+
+function limparLista() {
+    tarefas.length = 0
+    renderizarTarefas()
+    const mensagem = document.getElementById("mensagem")
+    mensagem.textContent = "Lista de tarefas limpa com sucesso!"
 }
