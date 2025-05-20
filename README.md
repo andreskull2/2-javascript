@@ -1,6 +1,6 @@
 # Project: To-Do List with JavaScript
 
-This project was developed following the lesson series "[JavaScript Course from Scratch](https://www.youtube.com/playlist?list=PLnDvRpP8BneqImZzZKsrZU6pzezG3xilz)" by [Rafaella Ballerini](https://github.com/rafaballerini).
+This project was developed following the lesson series "[JavaScript Course](https://www.youtube.com/playlist?list=PLhkO7OMKgT_rRK3qvJsZAy3jrkupOxD_h)" by [Rafaella Ballerini](https://github.com/rafaballerini).
 
 ![To-Do List](github/todo-preview.png)
 
